@@ -20,3 +20,13 @@ If you found any bugs please report them.
 | /pi.mkdir.internal.storage | make folder |
 | /pi.cd.internal.storage | choose folder |
 | /pi.shell.cmd.run | run shell cmd |
+
+# Requirement 
+Python 3.xx
+``` pkg install python ```
+``` python --version ```
+C
+```pkg install clang```
+
+# Licence 
+There is no licence:)

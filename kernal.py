@@ -28,10 +28,12 @@ def wait2():
     time.sleep(1)
     print("|")
     time.sleep(1)
+    print("\\")
+    time.sleep(1)
 
 #boot bios  
 base_dir = os.path.dirname(os.path.abspath(__file__))
-bios_path = os.path.join(base_dir, "/pios/pi_bios.py")   # adjust if in subfolder
+bios_path = os.path.join(base_dir,"pios", "pi_bios.py")   # adjust if in subfolder
 subprocess.run([sys.executable, bios_path])
 
 print("Welcome to π os!\n")
@@ -65,7 +67,7 @@ while True:
 
       if os.path.exists(app_path):
        subprocess.run(["gcc", app_path, "-o", output_path])
-       subprocess.run([output_path])
+       subprocess.run([f"./{output_path}"])
       else:
        print("Error: cannot find C file")
     elif user_input == "/pi.mkdir.internal.storage":  
@@ -73,13 +75,13 @@ while True:
       try: 
         os.mkdir(dir_name)
         print("Directory is created")
-      except error : 
+      except Exception as e : 
         print("Error: cannot create directory")
     elif user_input == "/pi.cd.internal.storage":  
       cd = input("π: ")
       try: 
-        os.cd(cd)
-      except error: 
+        os.chdir(cd)
+      except error as e: 
         print("Error: Cannot choose directory")
     elif user_input == "/pi.shell.cmd.run":  
       os.system(input("Enter shell comand: "))

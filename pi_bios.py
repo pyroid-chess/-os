@@ -12,7 +12,7 @@ def wait():
     time.sleep(1)
     print("|")
     time.sleep(1)
-    print("\")
+    print("\\")
     time.sleep(1)
     
 #check whether C compiler or C language is installed or not
@@ -36,7 +36,7 @@ else:
   os.mkdir("/pios/apps") 
   print("Apps folder created....done")
   
-apps = []
+apps = ["empty.py"]
 dic = "/pios/apps"
 found_apps = {fname: False for fname in apps}
 for root,dirs,files in os.walk(dic): 
